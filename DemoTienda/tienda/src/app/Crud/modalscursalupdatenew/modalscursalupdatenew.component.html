@@ -1,0 +1,98 @@
+
+
+<div>
+    <h1>{{title}}</h1>
+  </div>
+  
+  <section >
+  <form [formGroup]="form" novalidate (submit)="save(form.value)">
+     <mat-dialog-content>
+         <mat-card class="bgr-negro50">
+             <mat-card-content>
+                 <div class="row">
+                     <div class="col">
+                         <mat-card>
+                             <mat-card-content>
+                                 <mat-accordion>
+                                     <mat-expansion-panel [expanded]="true">
+  
+                                         <mat-card  >
+                                             <div class="row">
+  
+                                                 <input type="hidden" formControlName="tiendaId">
+                                            <div class="col-md-4">
+
+                                            </div>
+
+  
+                                                 <div class="col-md-8">
+                                                     <div class="col-12">
+                                                         <mat-form-field class="d-block">
+                                                             <input type="text" matInput maxlength="30"
+                                                                 placeholder="Sucursal" formControlName="sucursal"
+                                                                 required autocomplete="off"
+                                                                >
+                                                             <mat-error>Valor requerido</mat-error>
+                                                         </mat-form-field>
+  
+                                                     </div>
+  
+                                                     <div class="col-12">
+                                                       <mat-form-field class="d-block">
+                                                         <input type="text" matInput maxlength="30"
+                                                             placeholder="direccion" formControlName="direccion"
+                                                             required autocomplete="off"
+                                                            >
+                                                         <mat-error>Valor requerido</mat-error>
+                                                     </mat-form-field>
+  
+                                                         <!-- <mat-form-field class="d-block">
+                                                             <mat-select matInput placeholder="Tipo de Producto"
+                                                                 formControlName="TipoProducto" required>
+                                                                 <mat-option *ngFor="let item of ListaTipoServicio"
+                                                                     [value]="item.IdTipo">
+                                                                     {{item.Nombre}}
+                                                                 </mat-option>
+                                                             </mat-select>
+  
+                                                             <mat-error>Valor requerido</mat-error>
+  
+                                                         </mat-form-field> -->
+  
+                                                     </div>
+  
+                                                     <div class=" col-12">
+                                                     
+  
+  
+  
+  
+                                                     </div>
+  
+  
+                                                 </div>
+  
+                                             </div>
+                                         </mat-card>
+  
+  
+                                     </mat-expansion-panel>
+                                 </mat-accordion>
+                             </mat-card-content>
+                         </mat-card>
+                     </div>
+                 </div>
+             </mat-card-content>
+         </mat-card>
+     </mat-dialog-content>
+     <mat-dialog-actions>
+         <button type="button" mat-mini-fab color="accent" [mat-dialog-close]="'cerrar'" cdkFocusInitial>
+             <mat-icon>close</mat-icon>
+         </button>
+         <button type="submit" [disabled]="!form.valid" mat-mini-fab color="accept">
+             <mat-icon>check</mat-icon>
+         </button>
+     </mat-dialog-actions>
+  </form>
+  </section>
+  

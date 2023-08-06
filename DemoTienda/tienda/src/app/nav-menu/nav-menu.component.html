@@ -1,0 +1,86 @@
+<header>
+    <nav
+      class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    >
+      <div class="container">
+        <a class="navbar-brand" [routerLink]="['/']">Project2</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+          aria-label="Toggle navigation"
+          [attr.aria-expanded]="isExpanded"
+          (click)="toggle()"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+          [ngClass]="{ show: isExpanded }"
+        >
+          <ul class="navbar-nav flex-grow">
+            <li
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['/articulos']" [routerLinkActiveOptions]="{exact: true}" *ngIf="user">
+              <a class="nav-link text-dark" [routerLink]="['/articulos']"
+                >Articulos</a
+              >
+            </li>
+            <li class="nav-item" [routerLinkActive]="['login']">
+              <a class="nav-link text-dark" [routerLink]="['/login']"
+                >Clientes</a
+              >
+            </li>
+
+            <li class="nav-item" [routerLinkActive]="['link-active']">
+              <a class="nav-link text-dark" [routerLink]="['/ventas']"
+                >Ventas</a
+              >
+            </li>
+            <li class="nav-item" [routerLinkActive]="['/tienda']">
+              <a class="nav-link text-dark" [routerLink]="['/tienda']"
+                >Tienda</a
+              >
+            </li>  
+            <li class="nav-item" [routerLinkActive]="['/compra']">
+              <a class="nav-link text-dark" [routerLink]="['/compra']"
+                > Compras</a
+              >
+            </li>   
+            <li class="nav-item" [routerLinkActive]="['/compra']">
+              <a class="nav-link text-dark" [routerLink]="['/compra']"
+                >
+       
+                <button   mat-mini-fab  [matMenuTriggerFor]="menu">
+                  <span style="margin-right: 10px" [matBadge]="this.accountService.Carrito.length+''" matBadgeOverlap="false"
+                        matBadgePosition="below after"><mat-icon>shopping_cart</mat-icon></span>
+                       
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item *ngFor="let p of accountService.Carrito;">{{p.descripcion}} </button>
+                  <button mat-menu-item>
+                    <strong>Total: </strong>
+                  </button>
+                  <a  *ngIf="producto.length > 0"  mat-menu-item routerLink="/terminar_compra">
+                    <mat-icon>shopping_cart</mat-icon>
+                    Terminar compra</a>
+                </mat-menu>
+                
+
+
+                </a
+              >
+            </li>           
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  

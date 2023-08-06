@@ -1,0 +1,23 @@
+
+
+<div>
+    <h1>Eliminar</h1>
+  </div>
+  
+  <section >
+ 
+     <mat-dialog-content>
+        ¿desaa emininar el articulo?
+
+     </mat-dialog-content>
+     <mat-dialog-actions>
+         <button type="button" mat-mini-fab color="accent" [mat-dialog-close]="'cerrar'" cdkFocusInitial>
+             <mat-icon>close</mat-icon>
+         </button>
+         <button type="submit" mat-mini-fab color="accept" (click)="eliminar()">
+             <mat-icon>check</mat-icon>
+         </button>
+     </mat-dialog-actions>
+ 
+  </section>
+  
