@@ -46,7 +46,7 @@ login(login:Login) {
     .set('password', login.pwd)
      return this.http.post<Cliente>(`${environment.UrlApi}Login/loginCliente`, login)
          .pipe(map(user => {
-                   debugger
+                   
              this.isAuthenticated=true;
  
              localStorage.setItem('user', JSON.stringify(user));
@@ -63,4 +63,7 @@ getToken() {
   return this.cookies.get("token");
 } 
 
+getTuser() {
+  return this.cookies.get("user");
+} 
   }

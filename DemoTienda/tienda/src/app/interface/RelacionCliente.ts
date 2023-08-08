@@ -8,3 +8,12 @@ export interface Rcliente{
     descripcion:string;
 
 }
+
+export interface venta{
+
+    artCienteId:number
+    articuloId:number;
+    clienteId: number;
+     fecha:string;
+
+}

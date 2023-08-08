@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatStepperModule} from '@angular/material/stepper';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarArticulosComponent } from './articulos/listar-articulos/listar-articulos.component';
@@ -35,6 +35,7 @@ import { SucursalComponent } from './Crud/sucursal/sucursal.component';
 import { ModalscursalupdatenewComponent } from './Crud/modalscursalupdatenew/modalscursalupdatenew.component';
 import { ModalscursalDeleteComponent } from './Crud/modalscursal-delete/modalscursal-delete.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { TerminarcompraComponent } from './Crud/terminarcompra/terminarcompra.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ ListarArticulosComponent,
     SucursalComponent,
     ModalscursalupdatenewComponent,
     ModalscursalDeleteComponent,
+    TerminarcompraComponent,
     
    
     
@@ -76,7 +78,8 @@ ListarArticulosComponent,
      MatSnackBarModule,
      MatToolbarModule,
      MatMenuModule,
-     MatBadgeModule
+     MatBadgeModule,
+     MatStepperModule
      
  
     

@@ -21,7 +21,7 @@ ngOnInit(): void {
   this.ActulizaCarrito();
 }
 ActulizaCarrito(){
-  debugger
+  
 
 this.producto =this.accountService.Carrito;
 }
@@ -32,4 +32,11 @@ this.producto =this.accountService.Carrito;
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
+
+  public total() {
+    let total = 0;
+    this.accountService.Carrito.forEach(p => total += p.precio);
+    return total;
+  }
+
 }

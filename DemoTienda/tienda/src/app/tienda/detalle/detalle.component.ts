@@ -48,8 +48,7 @@ export class DetalleComponent {
 
   public async quitarDelCarrito() {
     const {id} = this.producto;
-    const respuesta = await this.carritoService.quitarProducto(id);
-    console.log({respuesta})
+  
     this.refrescarEstado();
   }
   

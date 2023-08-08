@@ -8,6 +8,7 @@ import { ArticuloClienteComponent } from './Crud/articulo-cliente/articulo-clien
 import { TiendaComponent } from './tienda/tienda/tienda.component';
 import { DetalleComponent } from './tienda/detalle/detalle.component';
 import { SucursalComponent } from './Crud/sucursal/sucursal.component';
+import { TerminarcompraComponent } from './Crud/terminarcompra/terminarcompra.component';
 
 
 const routes: Routes = [
@@ -17,9 +18,11 @@ const routes: Routes = [
   { path: 'tienda', pathMatch: 'full', component:SucursalComponent},
   { path: 'login', pathMatch: 'full', component:LoginComponent},
   { path: 'detalle/:id', pathMatch: 'full', component:DetalleComponent},
-  { path: 'compra', pathMatch: 'full', component:TiendaComponent},
+  { path: 'compra', pathMatch: 'full', component:TiendaComponent,canActivate:[AuthGuard]},
+  { path: 'terminar_compra', pathMatch: 'full', component:TerminarcompraComponent,canActivate:[AuthGuard]},
   
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

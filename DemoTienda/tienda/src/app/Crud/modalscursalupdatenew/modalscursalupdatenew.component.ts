@@ -67,7 +67,7 @@ export class ModalscursalupdatenewComponent implements OnInit {
   
   EditarClientes(){
     
- debugger
+ 
     
     
     this._globalService.getclienteId( this.sharedData.id ).subscribe({

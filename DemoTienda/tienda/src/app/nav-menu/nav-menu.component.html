@@ -65,9 +65,9 @@
                 <mat-menu #menu="matMenu">
                   <button mat-menu-item *ngFor="let p of accountService.Carrito;">{{p.descripcion}} </button>
                   <button mat-menu-item>
-                    <strong>Total: </strong>
+                    <strong>Total:{{total() }} </strong>
                   </button>
-                  <a  *ngIf="producto.length > 0"  mat-menu-item routerLink="/terminar_compra">
+                  <a  *ngIf="this.accountService.Carrito.length > 0"  mat-menu-item routerLink="/terminar_compra">
                     <mat-icon>shopping_cart</mat-icon>
                     Terminar compra</a>
                 </mat-menu>

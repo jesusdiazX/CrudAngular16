@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.refrescarCarrito();
   }
   refrescarCarrito() {
-    this.productos =  this.carritoService.obtenerProductos();
+ 
 
 }
 }

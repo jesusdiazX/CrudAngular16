@@ -1,41 +1,26 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Articulo } from '../interface/Iarticulo';
-
+import { venta } from '../interface/RelacionCliente';
+import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient
+    
+    ) {
   }
 
   public Carrito:Articulo[]=[];
 
-  public async quitarProducto(idProducto: number) {
-    return await this.http.post("/carrito/eliminar", {
-      id: idProducto,
-    });
-  }
+  Postventa( vents:venta){
+    debugger
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+      return this.http.post<venta>(environment.UrlApi +'Ventas/PostVenta',vents,{headers: headers });
+  
+    }
 
-  public async agregarAlCarrito(idProducto: number) {
-    return await this.http.post("/carrito/agregar", {
-      id: idProducto,
-    });
-  }
-
-  public async existeEnCarrito(idProducto: number) {
-    return await this.http.post("/carrito/existe", {
-      id: idProducto,
-    });
-  }
-
-   obtenerProductos() {
-    return  this.http.get("/carrito");
-  }
-
-  async terminarCompra(datosCliente: any) {
-    return await this.http.post("/compra", datosCliente);
-  }
 
   }
 
